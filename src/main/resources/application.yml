@@ -22,15 +22,3 @@ spring:
     username: root
     password: wine01!
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
-jwt:
-  header: Authorization
-  secret: d2luZS1wcm9qZWN0LWF1dGgtcHJpdmF0ZS1rZXktaG95b3VuZy1taW5zdWstbG90dGVkcHQtb24tYXdzLXdpbmUtcHJvamVjdC1hdXRoLXByaXZhdGUta2V5LWhveW91bmctbWluc3VrLWxvdHRlZHB0LW9uLWF3cy13aW5lLXByb2plY3QtYXV0aC1wcml2YXRlLWtleS1ob3lvdW5nLW1pbnN1ay1sb3R0ZWRwdC1vbi1hd3MK
-  token-validity-in-seconds: 86400
-
-aes:
-  key: ac1b4d1f4e60ae6e29d44cb75736d964
-
-server-flag:
-  flag: local-server
