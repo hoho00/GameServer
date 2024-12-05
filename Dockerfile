@@ -4,6 +4,8 @@ FROM openjdk:23-jdk
 # 워크디렉토리 설정
 WORKDIR /app
 
+CMD ["./gradlew", "clean", "build"]
+
 # 애플리케이션 패키지 복사
 COPY build/libs/hoho00-0.0.1-SNAPSHOT.jar app.jar
 
