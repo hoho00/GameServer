@@ -2,19 +2,25 @@ version: '3'
 services:
   # PostgreSQL 서비스 설정
   db:
-    image: postgres:13-alpine
+    container_name: gamedb
+    image: postgres:17-alpine
     environment:
       POSTGRES_DB: game
       POSTGRES_USER: game
       POSTGRES_PASSWORD: game
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - /Users/kihoyoung/docker-volumes/gamedb:/var/lib/postgresql/data
 
   # Spring Boot 서비스 설정
   app:
-    image: hoho00/game-server
+    image: game-server:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: game-server
+#    image: hoho00/game-server
     ports:
-      - "8080:8080"
+      - "8081:8081"
     depends_on:
       - db
     environment:
