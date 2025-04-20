@@ -1,10 +1,8 @@
-package com.watchGame.hoho00.playerCharacter.domain;
+package com.watchGame.hoho00.player.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.watchGame.hoho00.player.domain.Player;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,5 +17,9 @@ public class PlayerCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long playerCharacterId;
-    private String name;
+
+
+    @ManyToOne
+    @JoinColumn(name = "player_id")
+    private Player player;
 }
