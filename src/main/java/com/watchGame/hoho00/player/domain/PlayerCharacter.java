@@ -18,8 +18,13 @@ public class PlayerCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long playerCharacterId;
 
-
     @ManyToOne
     @JoinColumn(name = "player_id")
     private Player player;
+
+    private Integer level;
+
+    private Long exp;
+
+    private Long attackStat;
 }
